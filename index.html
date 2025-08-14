@@ -1,499 +1,253 @@
-<!DOCTYPE html>
-<html lang="da"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rolig mobilstart – tjekliste for 9–10‑årige</title>
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kom godt i gang med Nintendo Switch – til mor & skolebarn</title>
+  <meta name="description" content="Trin-for-trin guide til mor & barn: Opret Nintendo‑konto, brug eShop, find gratis/billige spil. Fokus på tryghed, læsbarhed og tilgængelighed." />
   <style>
-    /* === Modern, inspireret af gaming‑temaer (WPDeveloper), men varm og menneskelig === */
     :root{
-      --bg0:#0e1517; --bg1:#0c1f1d; --bg2:#142a28; --ink:#e8f1ef; --muted:#a9b6b2;
-      --accent:#18b27c; --accent-2:#5ee1b9; --accent-3:#3ad1a1; --danger:#ff6464;
-      --card:rgba(255,255,255,.06); --stroke:rgba(255,255,255,.12);
+      --bg: #f9fafb;           /* neutral-50 */
+      --card: #ffffff;
+      --ink: #111827;          /* gray-900 */
+      --muted: #374151;        /* gray-700 */
+      --accent: #2563eb;       /* blue-600 */
+      --accent-2: #10b981;     /* emerald-500 */
+      --border: #e5e7eb;       /* gray-200 */
+      --focus: #fb923c;        /* orange-400 */
     }
-    html,body{margin:0;padding:0;background:radial-gradient(1000px 600px at 20% -10%, #183a38 0%, transparent 50%),
-                                   radial-gradient(900px 700px at 110% 10%, #0d2d2a 0%, transparent 45%),
-                                   linear-gradient(180deg, var(--bg1), var(--bg0));
-      color:var(--ink);font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
-    .container{max-width:1100px;margin:0 auto;padding:28px 20px}
-    .glass{background:var(--card); border:1px solid var(--stroke); border-radius:18px; backdrop-filter:saturate(120%) blur(8px);}
-
-    /* Hero */
-    header.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,0.9fr);gap:28px;align-items:center;margin-top:8px}
-    .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2)}
-    h1{margin:.2rem 0 0;font-size:clamp(32px,4.8vw,56px);line-height:1.08;font-weight:850;
-       background:linear-gradient(100deg, #dffbf0 0%, #aaf1cf 40%, #7be7bd 70%, #e5fff8 100%);
-       -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
-    .lead{margin:12px 0 0;font-size:clamp(16px,2.1vw,20px);color:var(--muted)}
-
-    /* Buttons */
-    .btnbar{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
-    button{appearance:none;border:none;border-radius:14px;padding:12px 16px;font-weight:700;cursor:pointer}
-    .btn-primary{color:#05221d;background:linear-gradient(135deg,var(--accent) 0%, var(--accent-2) 100%);
-                 box-shadow:0 8px 24px rgba(30,226,162,.25), inset 0 -2px 0 rgba(0,0,0,.15)}
-    .btn-secondary{color:var(--ink);background:rgba(255,255,255,.08);border:1px solid var(--stroke)}
-    button:active{transform:translateY(1px)}
-
-    /* Cards/sections */
-    section.card{padding:18px 16px 12px;margin:16px 0}
-    section.card h2{font-size:18px;margin:0 0 10px;color:#d6fff2}
-    .section-title{display:flex;align-items:center;gap:8px}
-    .tag{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(24,178,124,.14);border:1px solid rgba(24,178,124,.35);color:#9ff3d7;font-size:12px}
-
-    /* Checklist */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-    ul.todo{list-style:none;margin:10px 0 6px;padding:0}
-    ul.todo li{display:flex;gap:12px;align-items:flex-start;padding:10px;border-radius:12px}
-    ul.todo li:hover{background:rgba(255,255,255,.04)}
-    input[type=checkbox]{width:1.15rem;height:1.15rem;border:2px solid rgba(255,255,255,.28);border-radius:8px;appearance:none;display:grid;place-content:center;background:rgba(0,0,0,.25)}
-    input[type=checkbox]:checked{background:linear-gradient(140deg,var(--accent-3),var(--accent-2));border-color:transparent}
-    input[type=checkbox]:checked::after{content:"✓";font-weight:900;color:#05221d;font-size:.95rem;transform:translateY(-1px)}
-    label{cursor:pointer}
-    .note{font-size:14px;color:#c2d6d1}
-
-    /* Links */
-    .links a{color:#9ff3d7;text-decoration-thickness:2px}
-
-    /* Footer */
-    footer{margin:26px 0 8px;padding-top:14px;border-top:1px dashed rgba(255,255,255,.12);font-size:14px;color:#c7d7d3}
-
-    /* Logo - stor rund i højre side */
-    .logoWrap{position:relative}
-    .logoWrap .glow{position:absolute;inset:-10%;background:radial-gradient(closest-side, rgba(90,255,200,.25), transparent 70%);filter:blur(18px);border-radius:50%}
-    .heroArt{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden}
-    .heroArt img{width:100%;height:100%;max-width:100%;object-fit:cover;display:block}
-
-    /* Testpanel (vises når #test i URL) */
-    #testpanel{display:none;position:fixed;right:14px;bottom:14px;max-width:360px;padding:12px 14px;border-radius:12px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.18);color:#e6fff7;font-size:12px;z-index:9999}
-    #testpanel ul{margin:8px 0 0;padding-left:18px}
-
-    /* Platform tab styling */
-    .platformBar{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 4px}
-    .pill{border:1px solid var(--stroke);background:rgba(255,255,255,.06);color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:700;cursor:pointer}
-    .pill[aria-pressed="true"]{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#05221d;border-color:transparent}
-    /* Active state for mode toggles */
-    .btn-toggle[aria-pressed="true"]{
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      color:#05221d;
-      border-color:transparent;
-      box-shadow:0 8px 24px rgba(30,226,162,.25), inset 0 -2px 0 rgba(0,0,0,.15);
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1020; --card:#0f162e; --ink:#f3f4f6; --muted:#cbd5e1; --border:#1f2a44; }
     }
-  /* === Responsive fixes for hero/top section === */
-.hero > div{min-width:0}
-.logoWrap{min-width:0}
-.heroArt{width:100%;height:auto}
-@media (max-width: 920px){
-  header.hero{grid-template-columns:1fr}
-}
-@media (max-width: 520px){
-  .btnbar{gap:10px}
-  h1{font-size:clamp(28px,7vw,38px)}
-  .lead{font-size:clamp(15px,4vw,18px)}
-}
+    html{ font-size: 18px; }
+    body{ margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji; color:var(--ink); background:var(--bg); line-height:1.6; }
+    a{ color: var(--accent); }
+    .container{ max-width: 880px; margin: 0 auto; padding: clamp(16px, 2vw, 32px); }
+    .skip{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip:focus{ position:static; width:auto; height:auto; margin:8px; padding:8px 12px; background:var(--accent); color:#fff; border-radius:12px; }
+
+    header.hero{ background: linear-gradient(135deg, var(--accent) 0%, #1e40af 100%); color:#fff; border-bottom: 1px solid var(--border); }
+    .hero-inner{ display:grid; grid-template-columns: 1.1fr; gap: 24px; align-items:center; padding: clamp(24px, 6vw, 48px) 0; }
+    .badge{ display:inline-block; background: rgba(255,255,255,.15); padding:6px 12px; border-radius: 999px; font-weight:600; letter-spacing:.2px; }
+    h1{ margin: 8px 0 0; font-size: clamp(1.6rem, 2.6vw, 2.2rem); line-height:1.2; }
+    p.lead{ margin: 8px 0 0; opacity:.95; }
+
+    .cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; }
+    .btn{ display:inline-flex; align-items:center; gap:.6em; padding: 14px 18px; min-height:48px; border-radius:16px; text-decoration:none; font-weight: 700; border:2px solid transparent; box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+    .btn svg{ width:1.2em; height:1.2em; }
+    .btn-primary{ background:#ffffff; color:#111827; }
+    .btn-accent{ background: var(--accent-2); color:#fff; }
+    .btn:focus{ outline: 3px solid var(--focus); outline-offset: 2px; }
+    .btn:hover{ transform: translateY(-1px); }
+    @media (prefers-reduced-motion: reduce){ .btn:hover{ transform:none; } }
+
+    .grid{ display:grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
+    @media (min-width: 720px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
+
+    .card{ background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 18px; box-shadow: 0 6px 18px rgba(0,0,0,.06); }
+    .card h2, .card h3{ margin-top:0; line-height:1.3; }
+    .kicker{ color: var(--muted); font-size:.95rem; margin-bottom:4px; }
+    .steps{ list-style: none; padding:0; margin:0; display:grid; gap:10px; }
+
+    /* iOS/Firefox kontrastfix: brug temaets kortfarve i stedet for hardkodet lys gradient */
+    .step{ display:grid; grid-template-columns: auto 1fr; gap:10px; align-items:start; background: var(--card); border:1px solid var(--border); border-radius:16px; padding:12px; }
+    .step input[type="checkbox"]{ inline-size: 24px; block-size: 24px; accent-color: var(--accent); }
+    .step label{ font-weight:600; }
+    .step small{ color: var(--muted); display:block; margin-top:4px; }
+
+    .note{ background: #fff7ed; border:1px solid #fed7aa; color:#7c2d12; border-radius:14px; padding:12px; }
+
+    details{ border:1px solid var(--border); border-radius:14px; padding:12px; background: var(--card); }
+    summary{ font-weight:700; cursor:pointer; }
+
+    footer{ margin-top: 40px; padding-top: 12px; border-top:1px solid var(--border); color: var(--muted); font-size:.95rem; }
+
+    /* print */
+    @media print{
+      header.hero, .cta-row, .tools{ display:none !important; }
+      body{ background:#fff; }
+      .card{ box-shadow:none; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="hero">
+  <a class="skip" href="#start">Spring til indhold</a>
+  <header class="hero" role="banner">
+    <div class="container hero-inner">
       <div>
-        <div class="eyebrow">Klasseaftale • tryg digital start</div>
-        <h1>Rolig mobilstart – en venlig tjekliste til 9–10‑årige</h1>
-        <p class="lead">I Danmark har de seneste års debat peget på behovet for en <strong>tryg og balanceret</strong> mobilstart. Børns Vilkår og Red Barnet fremhæver digital dannelse og forældresamarbejde som vejen frem. Denne side giver en <em>fælles baseline</em>: Telefonen kan <strong>ringe</strong>, <strong>sms’e</strong>, <strong>tage billeder</strong>, <strong>finde vej</strong> og <strong>betale sikkert</strong> – <em>uden</em> uønsket skærmforbrug. Vælg mellem <strong>Basisniveau (MAR)</strong> og <strong>Udvidet niveau</strong>.</p>
-        <div class="btnbar">
-          <button id="modeBasic" class="btn-secondary btn-toggle" title="Basisniveau (MAR)" aria-pressed="true">Basisniveau (MAR)</button>
-          <button id="modeExtended" class="btn-secondary btn-toggle" title="Udvidet niveau" aria-pressed="false">Udvidet niveau</button>
-          <button id="printBtn" class="btn-primary" title="Udskriv / Gem som PDF">Udskriv / Gem som PDF</button>
-          <button id="resetBtn" class="btn-secondary" title="Nulstil">Nulstil tjekbokse</button>
-        </div>
-        <div class="platformBar" role="tablist" aria-label="Platform">
-          <button id="tabIOS" class="pill" role="tab" aria-selected="true" aria-controls="iosGuide" aria-pressed="true">iOS (iPhone)</button>
-          <button id="tabAndroid" class="pill" role="tab" aria-selected="false" aria-controls="androidGuide" aria-pressed="false">Android</button>
+        <span class="badge" aria-label="Familievenlig">Familievenlig guide</span>
+        <h1>Kom godt i gang med Nintendo Switch<br>— til mor & skolebarn</h1>
+        <p class="lead">Let, trygt og trin for trin: Opret Nintendo‑konto, brug Nintendo eShop og find gratis/billige spil. Passer til at gøre <em>sammen</em> på 15–20 minutter.</p>
+        <div class="cta-row" role="navigation" aria-label="Hurtig start">
+          <a class="btn btn-primary" href="#trin" aria-label="Gå til trinene">
+            <!-- list icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+            Start trinene
+          </a>
+          <a class="btn btn-accent" href="#spil" aria-label="Se gratis spil">
+            <!-- gamepad icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9h12a4 4 0 0 1 0 8H6a4 4 0 0 1 0-8z"/><path d="M8 13h4M10 11v4M16 12h.01M18.5 14H18"/></svg>
+            Se gratis spil
+          </a>
         </div>
       </div>
-      <div class="logoWrap">
-        <div class="glow" aria-hidden="true"></div>
-        
-      </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- iOS: whitelist‑note (kun i Udvidet niveau) -->
-    <section class="card glass" id="modeNote" style="display:none">
-      <div class="section-title"><h2>Safari – whitelist (Udvidet niveau)</h2><span class="tag">Kun godkendte websteder</span></div>
-      <p class="note">iPhone: <em>Indstillinger → Skærmtid → Indhold &amp; anonymitet → App&nbsp;Store, medier, internet &amp; spil → Webindhold → <strong>Kun tilladte websteder</strong></em>. Tilføj webstederne herunder enkeltvis.</p>
-      <div class="grid">
-        <ul class="todo" data-section="wl1">
-          <li><input id="w1" type="checkbox"><label for="w1">sv.wikipedia.org / da.wikipedia.org</label></li>
-          <li><input id="w2" type="checkbox"><label for="w2">translate.google.com (eller Apples <em>Oversæt</em>-app)</label></li>
-          <li><input id="w3" type="checkbox"><label for="w3">lex.dk (Dansk leksikon)</label></li>
-          <li><input id="w4" type="checkbox"><label for="w4">ordnet.dk (Ordbøger)</label></li>
+  <main id="start" class="container" role="main">
+    <section id="trin" class="grid" aria-labelledby="trin-title">
+      <article class="card" aria-labelledby="opret-title">
+        <p class="kicker" id="trin-title">Trin for trin</p>
+        <h2 id="opret-title">1) Opret et Nintendo‑konto</h2>
+        <ul class="steps" id="steps-1">
+          <li class="step">
+            <input type="checkbox" id="s1-1" />
+            <div>
+              <label for="s1-1">Åbn <a href="https://accounts.nintendo.com" target="_blank" rel="noopener">accounts.nintendo.com</a></label>
+              <small>Vælg <strong>Opret konto</strong>. For børn oprettes kontoen via forældres konto.</small>
+            </div>
+          </li>
+          <li class="step">
+            <input type="checkbox" id="s1-2" />
+            <div>
+              <label for="s1-2">Udfyld e‑mail, adgangskode og fødselsdato</label>
+              <small>Bekræft via e‑mail. Gem adgangskoden sikkert.</small>
+            </div>
+          </li>
         </ul>
-        <ul class="todo" data-section="wl2">
-          <li><input id="w5" type="checkbox"><label for="w5">rejseplanen.dk (off. transport)</label></li>
-          <li><input id="w6" type="checkbox"><label for="w6">skoletube.dk (hvis skolen bruger det, UNI‑Login)</label></li>
-          <li><input id="w7" type="checkbox"><label for="w7">aula.dk / aulainfo.dk (skolekontakt)</label></li>
-          <li><input id="w8" type="checkbox"><label for="w8">translate.apple.com (valgfrit)</label></li>
+        <p class="note" role="note">Tip: Brug barnets kaldenavn som brugernavn. Det gør det nemmere i spil og venne-lister.</p>
+        <p style="margin-top:10px">Se officiel hjælp: <a href="https://en-americas-support.nintendo.com/app/answers/detail/a_id/15982/~/how-to-create-a-nintendo-account" target="_blank" rel="noopener">How to Create a Nintendo Account</a>.</p>
+      </article>
+
+      <article class="card" aria-labelledby="link-title">
+        <h2 id="link-title">2) Kobl kontoen til Switch</h2>
+        <ul class="steps" id="steps-2">
+          <li class="step">
+            <input type="checkbox" id="s2-1" />
+            <div>
+              <label for="s2-1">På Switch: Hjem → <em>Systemindstillinger</em> → <em>Brugere</em></label>
+              <small>Vælg barnets brugerprofil, tryk <strong>Kobl til Nintendo‑konto</strong> og log ind.</small>
+            </div>
+          </li>
+          <li class="step">
+            <input type="checkbox" id="s2-2" />
+            <div>
+              <label for="s2-2">Bekræft at profilen nu viser den rigtige konto</label>
+              <small>Nu virker eShop, onlinespil og sky-backup (med Nintendo Switch Online).</small>
+            </div>
+          </li>
         </ul>
-      </div>
-      <div class="btnbar">
-        <button id="copyList" class="btn-secondary">Kopiér whitelist (URL‑liste)</button>
-      </div>
+        <p style="margin-top:10px">Se officiel hjælp: <a href="https://www.nintendo.com/en-gb/Support/Nintendo-Switch/How-to-Link-a-Nintendo-Account-to-a-Nintendo-Switch-2-or-Nintendo-Switch-Console-1434312.html" target="_blank" rel="noopener">Link a Nintendo Account</a>.</p>
+      </article>
+
+      <article class="card" aria-labelledby="eshop-title">
+        <h2 id="eshop-title">3) Brug Nintendo eShop</h2>
+        <ul class="steps" id="steps-3">
+          <li class="step">
+            <input type="checkbox" id="s3-1" />
+            <div>
+              <label for="s3-1">Åbn <em>Nintendo eShop</em> fra Hjem‑skærmen</label>
+              <small>Vælg den bruger, der er koblet til Nintendo‑kontoen.</small>
+            </div>
+          </li>
+          <li class="step">
+            <input type="checkbox" id="s3-2" />
+            <div>
+              <label for="s3-2">Find spil: Søg efter <em>Gratis</em> eller gå til <em>Tilbud</em></label>
+              <small>På spillets side: vælg <strong>Download gratis</strong> eller <strong>Gå til køb</strong>.</small>
+            </div>
+          </li>
+        </ul>
+        <p style="margin-top:10px">Se officiel hjælp: <a href="https://www.nintendo.com/en-gb/Support/Nintendo-Switch/How-to-Purchase-or-Download-Content-on-Nintendo-eShop-for-Nintendo-Switch-1434313.html" target="_blank" rel="noopener">Køb eller download i eShop</a>.</p>
+      </article>
+
+      <article class="card" aria-labelledby="funds-title">
+        <h2 id="funds-title">4) (Valgfrit) Sæt penge ind eller brug gavekort</h2>
+        <p>Betal i eShop med betalingskort, PayPal (18+) eller eShop‑gavekort købt i butik.</p>
+        <p class="note" role="note">I kan også vælge kun at bruge <strong>gratis spil</strong> + <strong>demoer</strong> i starten.</p>
+      </article>
+
+      <article class="card" aria-labelledby="nso-title">
+        <h2 id="nso-title">5) Overvej Nintendo Switch Online</h2>
+        <ul class="steps" id="steps-5">
+          <li class="step">
+            <input type="checkbox" id="s5-1" />
+            <div>
+              <label for="s5-1">Online‑multiplayer & klassiske spil‑apps</label>
+              <small>Giver adgang til NES/SNES/Game Boy m.fl. og cloud‑backup af gemte data.</small>
+            </div>
+          </li>
+          <li class="step">
+            <input type="checkbox" id="s5-2" />
+            <div>
+              <label for="s5-2">Tetris 99 kræver medlemskab for online‑spil</label>
+              <small>Download er gratis, men online spilles med aktivt medlemskab.</small>
+            </div>
+          </li>
+        </ul>
+        <p style="margin-top:10px">Læs mere: <a href="https://www.nintendo.com/us/online/nintendo-switch-online/" target="_blank" rel="noopener">Nintendo Switch Online</a> • <a href="https://www.nintendo.com/us/store/products/tetris-99-switch/" target="_blank" rel="noopener">Tetris 99</a></p>
+      </article>
     </section>
 
-    <!-- ANDROID: whitelist‑note (kun i Udvidet niveau) -->
-    <section class="card glass" id="modeNoteAndroid" style="display:none">
-      <div class="section-title"><h2>Chrome – whitelist (Udvidet niveau)</h2><span class="tag">Kun godkendte websteder</span></div>
-      <p class="note">Android (Family Link): <em>Family Link → vælg barn → Indstillinger for Google&nbsp;Chrome → <strong>Kun tilladte websteder</strong></em>.
- Tilføj webstederne herunder enkeltvis. Slå evt. YouTube fra, og kræv 
-forældregodkendelse for app‑installationer i Google&nbsp;Play.</p>
-      <div class="grid">
-        <ul class="todo" data-section="wlA1">
-          <li><input id="aw1" type="checkbox"><label for="aw1">sv.wikipedia.org / da.wikipedia.org</label></li>
-          <li><input id="aw2" type="checkbox"><label for="aw2">translate.google.com</label></li>
-          <li><input id="aw3" type="checkbox"><label for="aw3">lex.dk</label></li>
-          <li><input id="aw4" type="checkbox"><label for="aw4">ordnet.dk</label></li>
+    <section id="spil" class="grid" aria-labelledby="spil-title">
+      <article class="card">
+        <h2 id="spil-title">Gode, gratis at starte med</h2>
+        <p class="kicker">Downloades direkte i eShop</p>
+        <ul>
+          <li><a href="https://www.nintendo.com/us/whatsnew/stock-up-on-quality-games-for-free/" target="_blank" rel="noopener">Rocket League, Fall Guys, Pokémon UNITE</a></li>
+          <li><a href="https://www.nintendo.com/us/store/products/brawlhalla-switch/" target="_blank" rel="noopener">Brawlhalla</a> (lokal/online kampe, 100% free‑to‑play)</li>
+          <li><a href="https://www.nintendo.com/us/online/nintendo-switch-online/" target="_blank" rel="noopener">Tetris 99</a> (kræver Nintendo Switch Online for online‑spil)</li>
+          <li>Se hele listen: <a href="https://www.nintendo.com/us/store/games/free-to-start-games/" target="_blank" rel="noopener">Free‑to‑start spil</a></li>
         </ul>
-        <ul class="todo" data-section="wlA2">
-          <li><input id="aw5" type="checkbox"><label for="aw5">rejseplanen.dk</label></li>
-          <li><input id="aw6" type="checkbox"><label for="aw6">skoletube.dk (UNI‑Login)</label></li>
-          <li><input id="aw7" type="checkbox"><label for="aw7">aula.dk / aulainfo.dk</label></li>
-          <li><input id="aw8" type="checkbox"><label for="aw8">translate.apple.com (valgfrit)</label></li>
+        <p class="note">Tip: Prøv også <a href="https://www.nintendo.com/us/store/games/games-with-free-demos/" target="_blank" rel="noopener">gratis demoer</a> før I køber noget.</p>
+      </article>
+
+      <article class="card">
+        <h2>Tryghed & gode vaner</h2>
+        <ul>
+          <li>Lav simple regler: Spil efter lektier, og hold små pauser.</li>
+          <li>Spil gerne <em>sammen</em> – det gør det sjovere og mere socialt.</li>
+          <li>Brug forældrekontrol‑appen hvis I vil styre spilletid og indhold.</li>
         </ul>
-      </div>
-      <div class="btnbar">
-        <button id="copyListAndroid" class="btn-secondary">Kopiér whitelist (URL‑liste)</button>
-      </div>
+      </article>
     </section>
 
-    <!-- ====== iOS GUIDE WRAPPER ====== -->
-    <div id="iosGuide" style="display: block;">
-      <section class="card glass">
-        <div class="section-title"><h2>1) Familiedeling &amp; Skærmtid</h2><span class="tag">Start</span></div>
-        <ul class="todo" data-section="familj">
-          <li><input id="t1" type="checkbox"><label for="t1">Tilføj barnet i <em>Indstillinger → Familie</em></label></li>
-          <li><input id="t2" type="checkbox"><label for="t2">Slå <strong>Skærmtid</strong> til for barnet, vælg en stærk <strong>Skærmtidskode</strong></label></li>
-        </ul>
-        <p class="note">Skærmtid kan styres fra din egen iPhone via Familiedeling.</p>
-      </section>
+    <!-- De to nederste sektioner (“Tilgængelighed & læsbarhed” og “Ofte stillede spørgsmål”) er fjernet -->
 
-      <section class="card glass">
-        <h2>2) Tilladte apps (behold kun det nødvendige)</h2>
-        <ul class="todo" data-section="appar">
-          <li><input id="t3" type="checkbox"><label for="t3">Tillad <strong>Telefon</strong>, <strong>Beskeder</strong>, <strong>Kamera</strong>, <strong>Kort</strong>, <strong>Wallet</strong></label></li>
-          <li><input id="t4" type="checkbox"><label for="t4"><strong>Safari</strong>: <em>sluk i Basisniveau (MAR)</em> eller <em>tillad kun whitelist i Udvidet</em></label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <h2>3) Stop installation/sletning/køb</h2>
-        <ul class="todo" data-section="store">
-          <li><input id="t5" type="checkbox"><label for="t5"><strong>Installer apps:</strong> Tillad ikke</label></li>
-          <li><input id="t6" type="checkbox"><label for="t6"><strong>Slet apps:</strong> Tillad ikke</label></li>
-          <li><input id="t7" type="checkbox"><label for="t7"><strong>Køb i apps:</strong> Tillad ikke</label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <h2>4) Kommunikationsgrænser</h2>
-        <ul class="todo" data-section="kommunikation">
-          <li><input id="t8" type="checkbox"><label for="t8"><strong>Under skærmtid:</strong> Kun kontakter / Specifikke kontakter</label></li>
-          <li><input id="t9" type="checkbox"><label for="t9"><strong>Under sengetid:</strong> Strammere hvis ønsket</label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <h2>5) Altid tilladt</h2>
-        <ul class="todo" data-section="alltid">
-          <li><input id="t10" type="checkbox"><label for="t10">Læg <strong>Telefon</strong> og <strong>Beskeder</strong> som altid tilladt</label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <div class="section-title"><h2>6) Sluk websøg via Siri/Intelligence</h2><span class="tag">Ekstra tryghed</span></div>
-        <ul class="todo" data-section="siri">
-          <li><input id="t11" type="checkbox"><label for="t11">Sluk <strong>Websøge‑indhold</strong></label></li>
-          <li><input id="t12" type="checkbox"><label for="t12">Sluk <strong>Eksplicit sprog</strong></label></li>
-          <li><input id="t13" type="checkbox"><label for="t13">(Valgfrit) Slå <strong>Intelligence/ChatGPT‑integration</strong> fra</label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <h2>7) Indholdsbegrænsninger</h2>
-        <ul class="todo" data-section="content">
-          <li><input id="t14" type="checkbox"><label for="t14">Sæt aldersniveau for <strong>Apps/Medier</strong> (fx 9+/12+)</label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <h2>8) Placering &amp; sikkerhed</h2>
-        <ul class="todo" data-section="plats">
-          <li><input id="t15" type="checkbox"><label for="t15"><strong>Find/Hitta</strong>: del barnets placering med forælder</label></li>
-          <li><input id="t16" type="checkbox"><label for="t16"><strong>Kort → Pladstilladelse</strong>: Tillad ved brug</label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <div class="section-title"><h2>9) Ekstra stramt – Guidad åtkomst</h2><span class="tag">Fokus</span></div>
-        <ul class="todo" data-section="ga">
-          <li><input id="t17" type="checkbox"><label for="t17">Aktivér <strong>Guidad åtkomst</strong> og vælg kode/Face ID</label></li>
-          <li><input id="t18" type="checkbox"><label for="t18">Test: Trippelklick sideknappen i en app (fx Kort) for at låse</label></li>
-        </ul>
-      </section>
+    <div class="container" style="padding:0; margin-top:16px; display:flex; gap:12px; flex-wrap:wrap">
+      <button class="btn btn-primary" id="biggerText" aria-pressed="false" aria-label="Større tekst">A↗︎ Større tekst</button>
+      <button class="btn btn-primary" id="resetText" aria-label="Nulstil tekststørrelse">Nulstil tekst</button>
+      <button class="btn btn-accent" onclick="window.print()" aria-label="Print eller gem som PDF">🖨️ Print / Gem som PDF</button>
     </div>
 
-    <!-- ====== ANDROID GUIDE WRAPPER ====== -->
-    <div id="androidGuide" style="display:none">
-      <section class="card glass">
-        <div class="section-title"><h2>1) Family Link &amp; grundopsætning</h2><span class="tag">Start</span></div>
-        <ul class="todo" data-section="a1">
-          <li><input id="a1" type="checkbox"><label for="a1">Installer <strong>Google Family Link</strong> på din mobil og barnets (opret/tilknyt barnets Google‑konto)</label></li>
-          <li><input id="a2" type="checkbox"><label for="a2">Aktivér <strong>Skærmtidsgrænser</strong> og <strong>Sengetid</strong> i Family Link</label></li>
-        </ul>
-        <p class="note">Family Link giver app‑godkendelser, tidsgrænser, placering og Chrome‑filtrering.</p>
-      </section>
-
-      <section class="card glass">
-        <h2>2) Tilladte apps (behold kun det nødvendige)</h2>
-        <ul class="todo" data-section="a2">
-          <li><input id="a3" type="checkbox"><label for="a3">Tillad <strong>Telefon</strong>, <strong>Beskeder/SMS</strong>, <strong>Kamera</strong>, <strong>Google&nbsp;Maps</strong>, <strong>Google&nbsp;Wallet</strong> (hvis banken og Google tillader det for alder)</label></li>
-          <li><input id="a4" type="checkbox"><label for="a4"><strong>Blokér YouTube/YouTube&nbsp;Kids</strong> (kan åbnes senere via godkendelse)</label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <h2>3) Stop installation/sletning/køb</h2>
-        <ul class="todo" data-section="a3">
-          <li><input id="a5" type="checkbox"><label for="a5"><strong>Google&nbsp;Play:</strong> Kræv forældregodkendelse for alle app‑installationer/køb</label></li>
-          <li><input id="a6" type="checkbox"><label for="a6">Begræns <strong>Aldersvurderinger</strong> i Google&nbsp;Play (fx 9+/12+)</label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <h2>4) Chrome – webindhold</h2>
-        <ul class="todo" data-section="a4">
-          <li><input id="a7" type="checkbox"><label for="a7"><strong>Indstil Chrome</strong> til <em>Kun tilladte websteder</em> i Family Link</label></li>
-          <li><input id="a8" type="checkbox"><label for="a8">(Alternativ) <em>Bloker eksplicit indhold</em> + SafeSearch</label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <h2>5) Kommunikation &amp; kontakter</h2>
-        <ul class="todo" data-section="a5">
-          <li><input id="a9" type="checkbox"><label for="a9">Hold kontaktlisten til godkendte personer; slå ukendte nummer‑blokering til i Telefon</label></li>
-          <li><input id="a10" type="checkbox"><label for="a10">Planlæg <strong>Sengetid</strong> og <strong>Forstyr ikke</strong> (do‑not‑disturb)</label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <h2>6) Indholdsbegrænsninger</h2>
-        <ul class="todo" data-section="a6">
-          <li><input id="a11" type="checkbox"><label for="a11"><strong>Google&nbsp;Play:</strong> Sæt passende aldersgrænser for film, spil og apps</label></li>
-          <li><input id="a12" type="checkbox"><label for="a12">Tillad kun skolevenlige apps: <em>Wikipedia</em>, <em>Oversæt</em>, <em>Lommeregner</em>, <em>Noter</em>, <em>Skoletube</em>, <em>Aula</em></label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <h2>7) Placering &amp; sikkerhed</h2>
-        <ul class="todo" data-section="a7">
-          <li><input id="a13" type="checkbox"><label for="a13">Slå <strong>Enhedsplacering</strong> til; del i Family Link</label></li>
-          <li><input id="a14" type="checkbox"><label for="a14">Tillad <strong>Google&nbsp;Maps</strong> at bruge placering ved brug</label></li>
-        </ul>
-      </section>
-
-      <section class="card glass">
-        <div class="section-title"><h2>8) Ekstra fokus – Skærmpinning</h2><span class="tag">Fokus</span></div>
-        <ul class="todo" data-section="a8">
-          <li><input id="a15" type="checkbox"><label for="a15">Aktivér <strong>Skærmpinning</strong> (Indstillinger → Sikkerhed → Skærmpinning) for at låse til én app</label></li>
-          <li><input id="a16" type="checkbox"><label for="a16">Test: Pin <em>Google&nbsp;Maps</em> og frigør igen</label></li>
-        </ul>
-      </section>
-    </div>
-
-    <section class="card glass links">
-      <h2>Kilder &amp; hjælpesider</h2>
-      <ul>
-        <li><a href="https://support.apple.com/da-dk/105121" target="_blank" rel="noopener">Apple: Børnesikring &amp; webindhold (Skærmtid)</a></li>
-        <li><a href="https://support.apple.com/da-dk/guide/iphone/iph3ff83f3b1/ios" target="_blank" rel="noopener">Apple: Blokér apps, websteder og køb (iPhone)</a></li>
-        <li><a href="https://families.google.com/familylink/" target="_blank" rel="noopener">Google: Family Link (overblik)</a></li>
-        <li><a href="https://bornsvilkar.dk/skaermguiden/" target="_blank" rel="noopener">Børns Vilkår: Skærmguiden (9–12 år)</a></li>
-        <li><a href="https://redbarnet.dk/nyheder/organisationer-lancerer-ny-stor-laeringsplatform-der-skal-styrke-digital-dannelse-hos-boern-og-unge/" target="_blank" rel="noopener">Red Barnet m.fl.: National indsats for digital dannelse (2024)</a></li>
-        <li><a href="https://redbarnet.dk/nyheder/red-barnet-i-ny-alliance-om-digital-tryghed/" target="_blank" rel="noopener">Red Barnet: Alliance for digital tryghed (2024)</a></li>
-        <li><a href="https://bornsvilkar.dk/nyheder/boern-og-unge-havde-over-64-000-samtaler-med-boernetelefonen-og-hoert-i-2024/" target="_blank" rel="noopener">Børns Vilkår: 64.000 samtaler – status 2024/25</a></li>
-        <li><a href="https://sletdet.redbarnet.dk/wp-content/uploads/2024/09/Boern-og-unges-erfaringer-med-digitale-kraenkelser-og-andre-ubehagelige-oplevelser-online-rapport-2024-kort-version.pdf" target="_blank" rel="noopener">Red Barnet/TrygFonden: Digitale krænkelser – kort rapport (2024)</a></li>
-        <li><a href="https://skoletubeguide.dk/" target="_blank" rel="noopener">SkoletubeGuide: forløb og vejledninger (2025)</a></li>
-      </ul>
-    </section>
-
-    <footer>
-      <span class="tag">Minimal smartphone</span>
-      <span class="tag">Klassens forældre</span>
-      <span class="tag">9–10 år</span>
-      <p style="color:#a8c7bf">Denne side gemmer dine tjekbokse lokalt i browseren (ingen data sendes). Del den gerne i klassen.</p>
+    <footer class="container">
+      <p>Links: Officiel Nintendo‑hjælp og butikssider. Testet til at være direkte og virke i EU/US‑regioner.</p>
     </footer>
-  </div>
-
-  <div id="testpanel" class="glass"></div>
+  </main>
 
   <script>
-    // Lokal lagring af tjekbokse
-    (function(){
-      const KEY = 'kids-phone-checklist-v4';
-      const boxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
-      const saved = JSON.parse(localStorage.getItem(KEY) || '{}');
-      boxes.forEach(cb=>{ if(saved[cb.id]) cb.checked = true; cb.addEventListener('change',()=>{saved[cb.id]=cb.checked; localStorage.setItem(KEY, JSON.stringify(saved));});});
-      document.getElementById('resetBtn').addEventListener('click',()=>{ boxes.forEach(cb=>cb.checked=false); localStorage.removeItem(KEY); });
-      document.getElementById('printBtn').addEventListener('click',()=>window.print());
-    })();
+    // Gem tjekkede trin i localStorage
+    const checkboxes = document.querySelectorAll('.step input[type="checkbox"]');
+    checkboxes.forEach(cb => {
+      const key = 'chk-' + cb.id;
+      cb.checked = localStorage.getItem(key) === '1';
+      cb.addEventListener('change', () => localStorage.setItem(key, cb.checked ? '1' : '0'));
+    });
 
-    // Tilstand (Basis vs. Udvidet) + Platform (iOS/Android) + whitelist‑kopi
-    (function(){
-      const modeNoteIOS = document.getElementById('modeNote');
-      const modeNoteAndroid = document.getElementById('modeNoteAndroid');
-      const basicBtn = document.getElementById('modeBasic');
-      const extBtn = document.getElementById('modeExtended');
-      const tabIOS = document.getElementById('tabIOS');
-      const tabAndroid = document.getElementById('tabAndroid');
-      const iosGuide = document.getElementById('iosGuide');
-      const androidGuide = document.getElementById('androidGuide');
-      const whitelistCopyBtnIOS = document.getElementById('copyList');
-      const whitelistCopyBtnAndroid = document.getElementById('copyListAndroid');
+    // Enkel font-size kontrol (respekter WCAG krav om 200% zoom via browser også)
+    const root = document.documentElement;
+    const bigger = document.getElementById('biggerText');
+    const reset = document.getElementById('resetText');
+    const keyFS = 'fs-base';
+    const setFS = v => { root.style.fontSize = v + 'px'; localStorage.setItem(keyFS, v); bigger.setAttribute('aria-pressed', v>18 ? 'true' : 'false'); };
+    const saved = parseInt(localStorage.getItem(keyFS),10);
+    if(!isNaN(saved)) setFS(saved);
 
-      function getWhitelistUrls(){
-        return [
-          'https://sv.wikipedia.org',
-          'https://da.wikipedia.org',
-          'https://translate.google.com',
-          'https://lex.dk',
-          'https://ordnet.dk',
-          'https://www.rejseplanen.dk',
-          'https://www.skoletube.dk',
-          'https://www.aula.dk',
-          'https://aulainfo.dk'
-        ];
-      }
-      function getWhitelistText(){ return getWhitelistUrls().join('\n'); }
-
-      function setMode(mode){
-        localStorage.setItem('kids-phone-mode', mode);
-        const platform = localStorage.getItem('kids-phone-platform')||'ios';
-        // visuelt aktivt tilstand for knapperne
-        basicBtn.setAttribute('aria-pressed', mode==='basic');
-        extBtn.setAttribute('aria-pressed', mode==='extended');
-        const show = (mode==='extended');
-        modeNoteIOS.style.display = (platform==='ios' && show) ? 'block' : 'none';
-        modeNoteAndroid.style.display = (platform==='android' && show) ? 'block' : 'none';
-      }
-      function setPlatform(platform){
-        localStorage.setItem('kids-phone-platform', platform);
-        const mode = localStorage.getItem('kids-phone-mode')||'basic';
-        iosGuide.style.display = (platform==='ios') ? 'block' : 'none';
-        androidGuide.style.display = (platform==='android') ? 'block' : 'none';
-        tabIOS.setAttribute('aria-pressed', platform==='ios');
-        tabAndroid.setAttribute('aria-pressed', platform==='android');
-        setMode(mode);
-      }
-
-      // init
-      const savedMode = localStorage.getItem('kids-phone-mode')||'basic';
-      const savedPlatform = localStorage.getItem('kids-phone-platform')||'ios';
-      setPlatform(savedPlatform);
-      setMode(savedMode);
-
-      basicBtn.addEventListener('click',()=>setMode('basic'));
-      extBtn.addEventListener('click',()=>setMode('extended'));
-      tabIOS.addEventListener('click',()=>setPlatform('ios'));
-      tabAndroid.addEventListener('click',()=>setPlatform('android'));
-
-      // Kopiér whitelist til udklipsholder (begge platforme)
-      async function copyList(btn){
-        const text = getWhitelistText();
-        try{
-          if(navigator.clipboard && navigator.clipboard.writeText){ await navigator.clipboard.writeText(text); }
-          else { const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }
-          btn.textContent='Kopieret!';
-        }catch(e){ console.error('Kopiering mislykkedes:', e); btn.textContent='Kunne ikke kopiere'; }
-        setTimeout(()=>btn.textContent='Kopiér whitelist (URL‑liste)',1200);
-      }
-      if(whitelistCopyBtnIOS) whitelistCopyBtnIOS.addEventListener('click',()=>copyList(whitelistCopyBtnIOS));
-      if(whitelistCopyBtnAndroid) whitelistCopyBtnAndroid.addEventListener('click',()=>copyList(whitelistCopyBtnAndroid));
-
-      // === Mini test suite (vises når URL har #test) ===
-      (function runTests(){
-        if(location.hash !== '#test') return;
-        const panel = document.getElementById('testpanel');
-        panel.style.display='block';
-        const results = [];
-        function test(name, fn){ try{ fn(); results.push('✅ '+name); } catch(err){ results.push('❌ '+name+'\n'+err.message); } }
-
-        // Eksisterende tests (uændret)
-        test('Whitelist join bruger \\n', ()=>{
-          const t = getWhitelistText();
-          if(t.includes('\r')) throw new Error('Indeholder CR');
-          const expectedBreaks = getWhitelistUrls().length - 1;
-          const actualBreaks = (t.match(/\n/g)||[]).length;
-          if(actualBreaks !== expectedBreaks) throw new Error('Forkert antal linjeskift: '+actualBreaks+' != '+expectedBreaks);
-        });
-        test('Whitelist ikke tom og gyldige skemaer', ()=>{
-          const arr = getWhitelistUrls();
-          if(!arr.length) throw new Error('Tom liste');
-          arr.forEach(u=>{ if(!/^https:\/\//.test(u)) throw new Error('Ugyldig URL: '+u); });
-        });
-        test('setMode("extended") viser note for aktiv platform', ()=>{
-          setPlatform('ios'); setMode('extended'); if(getComputedStyle(modeNoteIOS).display==='none') throw new Error('iOS note vises ikke');
-          setPlatform('android'); setMode('extended'); if(getComputedStyle(modeNoteAndroid).display==='none') throw new Error('Android note vises ikke');
-          setMode('basic'); if(getComputedStyle(modeNoteAndroid).display!=='none') throw new Error('Android note skjules ikke');
-          setPlatform('ios'); setMode('basic'); if(getComputedStyle(modeNoteIOS).display!=='none') throw new Error('iOS note skjules ikke');
-        });
-        test('Platform‑skift toggler guider', ()=>{
-          setPlatform('android'); if(getComputedStyle(androidGuide).display==='none') throw new Error('Android guide skjules');
-          if(getComputedStyle(iosGuide).display!=='none') throw new Error('iOS guide vises fejlagtigt');
-          setPlatform('ios'); if(getComputedStyle(iosGuide).display==='none') throw new Error('iOS guide skjules');
-        });
-        // Nyt: mode-knapper skifter aktiv farve/tilstand
-        test('Mode‑knapper aria‑pressed toggler korrekt', ()=>{
-          setMode('extended');
-          if(basicBtn.getAttribute('aria-pressed')==='true') throw new Error('Basis burde være false');
-          if(extBtn.getAttribute('aria-pressed')!=='true') throw new Error('Udvidet burde være true');
-          setMode('basic');
-          if(basicBtn.getAttribute('aria-pressed')!=='true') throw new Error('Basis burde være true');
-          if(extBtn.getAttribute('aria-pressed')==='true') throw new Error('Udvidet burde være false');
-        });
-        // Nyt: platform‑piller aria-pressed toggler korrekt
-        test('Platform‑piller aria‑pressed toggler korrekt', ()=>{
-          setPlatform('android');
-          if(tabIOS.getAttribute('aria-pressed')==='true') throw new Error('iOS‑pill burde være false');
-          if(tabAndroid.getAttribute('aria-pressed')!=='true') throw new Error('Android‑pill burde være true');
-          setPlatform('ios');
-          if(tabIOS.getAttribute('aria-pressed')!=='true') throw new Error('iOS‑pill burde være true');
-          if(tabAndroid.getAttribute('aria-pressed')==='true') throw new Error('Android‑pill burde være false');
-        });
-
-        panel.innerHTML = '<strong>Tests</strong><ul><li>'+results.join('</li><li>')+'</li></ul>';
-        // Nytt: sanity-check av hero-bildens src (får inte innehålla "...")
-        test('Hero-billede src ikke trunkeret', ()=>{
-          const img = document.querySelector('.heroArt img');
-          if(!img) throw new Error('Hero-billede mangler');
-          const src = img.getAttribute('src')||'';
-          if(src.includes('...')) throw new Error('Src indeholder ellipser (trunkeret)');
-          if(src.startsWith('data:image/')){
-            if(!/^data:image\/(png|jpeg);base64,[A-Za-z0-9+/=]+$/.test(src)){
-              throw new Error('Data-URI ser ugyldig ud');
-            }
-          }
-        });
-        // Nytt test: hero-bildens src är korrekt URL-enkodad
-        test('Hero-billede er data-URI eller sandbox', ()=>{
-          const img = document.querySelector('.heroArt img');
-          if(!img) throw new Error('Hero-billede mangler');
-          const src = img.getAttribute('src')||'';
-          if(!(src.startsWith('data:image/') || src.startsWith('sandbox:'))){
-            throw new Error('Forventer data-URI eller sandbox');
-          }
-          if(src.includes(' ')) throw new Error('Src indeholder mellemrum');
-        });
-      })();
-    })();
+    bigger.addEventListener('click', () => {
+      const cur = parseInt(getComputedStyle(root).fontSize,10) || 18;
+      setFS(Math.min(cur + 2, 24));
+    });
+    reset.addEventListener('click', () => setFS(18));
   </script>
-
-
-</body></html>
+</body>
+</html>
